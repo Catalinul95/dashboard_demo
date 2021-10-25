@@ -30,11 +30,23 @@
                                 <span class="link__name">Dashboard</span>
                             </a>
                         </li>
-                        <li class="menu__item">
-                            <a href="#" class="menu__link">
+                        <li class="menu__item" x-data="{showDropdown: false,}">
+                            <a href="#" class="menu__link" @click="showDropdown = !showDropdown">
                                 <i class='bx bxs-user link__icon'></i>
                                 <span class="link__name">Users</span>
+                                <div x-show="!sidebarToggle" class="dropdown__icons">
+                                    <i class='bx bxs-down-arrow' x-show="!showDropdown"></i>
+                                    <i class='bx bxs-up-arrow' x-show="showDropdown"></i>
+                                </div>
                             </a>
+                            <ul class="menu__dropdown" x-bind:class="showDropdown ? 'show-dropdown' : ''">
+                                <li>
+                                    <a href="#">All Users</a>
+                                </li>
+                                <li>
+                                    <a href="#">Create User</a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="menu__item">
                             <a href="#" class="menu__link">
