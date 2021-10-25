@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body x-data="{sidebarVisible: false, sidebarToggle: false, modalVisible: false}">
+    <div class="container">
+        <div class="sidebar" x-bind:class="[(sidebarVisible) ? 'show-sidebar' : '', (sidebarToggle) ? 'sidebar-toggled' : '']">
+            <div class="siderbar__header">
+                <div class="logo">
+                    <a href="#" class="logo__link">
+                        <i class='bx bxs-dashboard'></i> 
+                        <span class="logo__title">QuizTime</span>
+                    </a>
+                    <i class='bx bx-left-arrow-alt slide-close-icon' @click="sidebarVisible = !sidebarVisible"></i>
+                </div>
+            </div>
+            <div class="sidebar__content">
+                <div class="menu">
+                    <h3 class="menu__title">Menu</h3>
+                    <ul class="menu__list">
+                        <li class="menu__item">
+                            <a href="#" class="menu__link menu__link-active">
+                                <i class='bx bxs-dashboard link__icon'></i>
+                                <span class="link__name">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">
+                                <i class='bx bxs-user link__icon'></i>
+                                <span class="link__name">Users</span>
+                            </a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">
+                                <i class='bx bxs-book-content link__icon'></i>
+                                <span class="link__name">Classes</span>
+                            </a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">
+                                <i class='bx bxs-analyse link__icon'></i>
+                                <span class="link__name">Quizzes</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="menu">
+                    <h3 class="menu__title">Settings</h3>
+                    <ul class="menu__list">
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">
+                                <i class='bx bxs-wrench link__icon'></i>
+                                <span class="link__name">Settings</span>
+                            </a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">
+                                <i class='bx bxs-user-account link__icon'></i>
+                                <span class="link__name">Account</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="menu menu-bottom">
+                    <ul class="menu__list">
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">
+                                <i class='bx bx-exit link__icon'></i>
+                                <span class="link__name">Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content" x-bind:class="[(sidebarToggle) ? 'content-toggled' : '']">
+
+            <div class="content__header">
+                <div class="header__left">
+                    <i class='bx bx-menu slide-sidebar' x-on:click="sidebarVisible = !sidebarVisible"></i>
+                    <i class='bx bx-menu toggle-sidebar' x-on:click="sidebarToggle = !sidebarToggle"></i>
+                    <h1 class="header__title">Dashboard</h1>
+                </div>
+                
+                <div class="header__right">
+                    <div class="header__dropdown" x-data="{dropdownVisible: false}">
+                        <i class='bx bxs-bell' @click="dropdownVisible = !dropdownVisible"></i>
+                        <div class="dropdown-content" x-bind:class="dropdownVisible ? 'show-dropdown':''">
+                            <a href="#">
+                                <span><strong>Catalin </strong>    created a new quiz a moment ago.</span>
+                            </a>
+                            <a href="#">
+                                <span><strong>Madalina</strong> solved all quizzes 3 hours ago.</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="header__dropdown" x-data="{dropdownVisible: false}">
+                        <i class='bx bxs-user-circle' @click="dropdownVisible = !dropdownVisible"></i>
+                        <div class="dropdown-content" x-bind:class="dropdownVisible ? 'show-dropdown':''">
+                            <a href="#">
+                                <i class="bx bxs-user-account link__icon"></i>
+                                <span>My Account</span>
+                            </a>
+                            <a href="#">
+                                <i class="bx bx-exit link__icon"></i>
+                                <span>Logout</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content__main">
+                <div class="info">
+                    <div class="info__box">
+                        <div class="box__left">
+                            <span class="title">Users</span>
+                            <span class="value">103</span>
+                        </div>
+                        <div class="box__right">
+                            <i class='bx bxs-user-plus'></i>
+                        </div>
+                    </div>
+                    <div class="info__box">
+                        <div class="box__left">
+                            <span class="title">Classes</span>
+                            <span class="value">103</span>
+                        </div>
+                        <div class="box__right">
+                            <i class='bx bxs-book-content'></i>
+                        </div>
+                    </div>
+                    <div class="info__box">
+                        <div class="box__left">
+                            <span class="title">Quizzes</span>
+                            <span class="value">103</span>
+                        </div>
+                        <div class="box__right">
+                            <i class='bx bxs-analyse'></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="box__header">
+                        <h1 class="box__title">Users</h1>
+                        <div class="box__header-tools">
+                            <input type="text" name="search" placeholder="Search users..">
+                            <button class="button button-red">
+                                <i class='bx bxs-trash'></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="table__wrapper">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>
+                                        <div class="table-th">
+                                            <span>ID</span>
+                                            <i class='bx bxs-down-arrow-alt'></i>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="table-th">
+                                            <span>Username</span>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="table-th">
+                                            <span>Email</span>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="table-th">
+                                            <span>Created At</span>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="table-th">
+                                            <span>Actions</span>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="checkbox" name="checked"></td>
+                                    <td>1</td>
+                                    <td>Catalin</td>
+                                    <td>pocsan95@gmail.com</td>
+                                    <td>10/23/2021</td>
+                                    <td>
+                                        <a href="#"><i class='bx bx-edit table__icon-edit'></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="checked"></td>
+                                    <td>2</td>
+                                    <td>Madalina</td>
+                                    <td>pocsanjr@gmail.com</td>
+                                    <td>10/23/2021</td>
+                                    <td>
+                                        <a href="#"><i class='bx bx-edit table__icon-edit'></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="checked"></td>
+                                    <td>3</td>
+                                    <td>Lica</td>
+                                    <td>lica@gmail.com</td>
+                                    <td>10/23/2021</td>
+                                    <td>
+                                        <a href="#"><i class='bx bx-edit table__icon-edit'></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="checked"></td>
+                                    <td>4</td>
+                                    <td>Andrei</td>
+                                    <td>andrei@gmail.com</td>
+                                    <td>10/23/2021</td>
+                                    <td>
+                                        <a href="#"><i class='bx bx-edit table__icon-edit'></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <h1>This is a title</h1>
+                    <h2>This is a title</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, veritatis! Incidunt ab hic sequi voluptate, voluptates enim aspernatur dolorem magnam. Odit fugit provident nihil dicta distinctio minima doloremque, itaque repellendus?</p>
+                    <a href="#" class="link">This is a link</a>
+                    <button class="button">Button</button>
+                    <button class="button button-red">Button Red</button>
+                    <button class="button button-green">Button Red</button>
+                    <button class="button button-white">Report</button>
+                    <button class="button button-dark">Button Dark</button>
+                    <button class="button button-dark" @click="modalVisible = !modalVisible">Modal</button>
+                    <form action="">
+                        <div class="form__group">
+                            <label for="username" class="form__label">Username</label>
+                            <input type="text" name="username" id="username" placeholder="Username.." class="form__input">
+                        </div>
+                        <div class="form__group">
+                            <label for="email" class="form__label">Email</label>
+                            <input type="email" name="email" id="email" placeholder="Email.." class="form__input">
+                        </div>
+                        <div class="form-group">
+                            <button class="button button-green">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="modal__container" x-bind:class="modalVisible ? 'modal-visible' : ''">
+        <div class="modal__content">
+            <div class="modal__close close-modal" title="Close">
+                <i class="bx bx-x" @click="modalVisible = !modalVisible"></i>
+            </div>
+
+            <h1>Good Job!</h1>
+            <p>Click the button to close</p>
+
+        </div>
+    </div>
+
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+</html>
