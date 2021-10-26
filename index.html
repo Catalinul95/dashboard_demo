@@ -8,7 +8,18 @@
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body x-data="{sidebarVisible: false, sidebarToggle: false, modalVisible: false, darkMode: true,}" x-bind:class="darkMode ? '' : 'dark-mode'">
+<body 
+    x-data="{
+        sidebarVisible: false, 
+        sidebarToggle: false, 
+        modalVisible: false, 
+        darkMode: localStorage.getItem('darkMode') ? 1 : 0,
+    }" 
+
+    x-init="$watch('darkMode', (val) => localStorage.setItem('darkMode', val)); darkMode = localStorage.getItem('darkMode') ? 1 : 0"
+
+    x-bind:class="parseInt(darkMode) === 1 ? 'dark-mode' : ''"
+>
     <div class="container">
         <div class="sidebar" x-bind:class="[(sidebarVisible) ? 'show-sidebar' : '', (sidebarToggle) ? 'sidebar-toggled' : '']">
             <div class="siderbar__header">
@@ -127,8 +138,8 @@
                         </div>
                     </div>
                     <div>
-                        <i class='bx bxs-sun' x-show="!darkMode" @click="darkMode = !darkMode"></i>
-                        <i class='bx bxs-moon' x-show="darkMode"  @click="darkMode = !darkMode"></i>
+                        <i class='bx bxs-sun' x-show="!darkMode" @click="darkMode = 1"></i>
+                        <i class='bx bxs-moon' x-show="darkMode"  @click="darkMode = 0"></i>
                     </div>
                 </div>
             </div>
