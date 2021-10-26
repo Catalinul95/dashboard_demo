@@ -262,6 +262,32 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
+.inner__tabs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 2rem;
+    margin-top: -1.5rem;
+}
+
+.tab {
+    text-align: center;
+    flex-basis: 100%;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    color: var(--text-second-color);
+}
+
+.tab:hover {
+    color: var(--text-color);
+    border-bottom: 1px solid var(--bg-second-color);
+}
+
+.tab-active {
+    border-bottom: 1px solid var(--bg-second-color);
+}
+
 /* ==================== SIDEBAR ========== */
 .sidebar {
     width: 18rem;
@@ -628,6 +654,11 @@ input[type="checkbox"] {
 @media screen and (min-width: 1024px) {
     .box__header {
         flex-direction: row;
+    }
+
+    .inner__tabs {
+        flex-direction: row;
+        margin-bottom: 2rem;
     }
 
     .sidebar {

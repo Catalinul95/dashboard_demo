@@ -274,6 +274,29 @@
                         </div>
                     </form>
                 </div>
+
+                <div class="tabs" x-data="{openTab: 1,}">
+                    <div class="inner__tabs">
+                        <div x-bind:class="openTab === 1 ? 'tab-active' : ''" class="tab" @click="openTab = 1">Tab 1</div>
+                        <div x-bind:class="openTab === 2 ? 'tab-active' : ''" class="tab" @click="openTab = 2">Tab 2</div>
+                        <div x-bind:class="openTab === 3 ? 'tab-active' : ''" class="tab" @click="openTab = 3">Tab 3</div>
+                        <div x-bind:class="openTab === 4 ? 'tab-active' : ''" class="tab" @click="openTab = 4">Tab 3</div>
+                    </div>
+                    <div class="tabs__content">
+                        <div x-show="openTab === 1" class="box">
+                            Tab 1
+                        </div>
+                        <div x-show="openTab === 2" class="box">
+                            Tab 2
+                        </div>
+                        <div x-show="openTab === 3" class="box">
+                            Tab 3
+                        </div>
+                        <div x-show="openTab === 4" class="box">
+                            Tab 4
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
