@@ -8,7 +8,7 @@
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body x-data="{sidebarVisible: false, sidebarToggle: false, modalVisible: false}">
+<body x-data="{sidebarVisible: false, sidebarToggle: false, modalVisible: false, darkMode: true,}" x-bind:class="darkMode ? '' : 'dark-mode'">
     <div class="container">
         <div class="sidebar" x-bind:class="[(sidebarVisible) ? 'show-sidebar' : '', (sidebarToggle) ? 'sidebar-toggled' : '']">
             <div class="siderbar__header">
@@ -41,10 +41,10 @@
                             </a>
                             <ul class="menu__dropdown" x-bind:class="showDropdown ? 'show-dropdown' : ''">
                                 <li>
-                                    <a href="#">All Users</a>
+                                    <a href="#" x-bind:class="!sidebarToggle ? 'custom-dark' : ''">All Users</a>
                                 </li>
                                 <li>
-                                    <a href="#">Create User</a>
+                                    <a href="#" x-bind:class="!sidebarToggle ? 'custom-dark' : ''">Create User</a>
                                 </li>
                             </ul>
                         </li>
@@ -125,6 +125,10 @@
                                 <span>Logout</span>
                             </a>
                         </div>
+                    </div>
+                    <div>
+                        <i class='bx bxs-sun' x-show="!darkMode" @click="darkMode = !darkMode"></i>
+                        <i class='bx bxs-moon' x-show="darkMode"  @click="darkMode = !darkMode"></i>
                     </div>
                 </div>
             </div>
