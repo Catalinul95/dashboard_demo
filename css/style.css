@@ -22,6 +22,9 @@
     --bg-success-color: #05cf0f;
     --bg-success-darker-color: #03be0d;
 
+    --bg-warning-color: #daa107;
+    --bg-warning-darker-color: #c79817;
+
     --bg-dark-color: #1F2233;
     --bg-dark-darker-color: #1c1f2f;
 
@@ -83,9 +86,49 @@ h1, h2, h3, h4 {
     font-weight: 500;
 }
 
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
 .link {
     text-decoration: underline;
     display: inline-flex;
+}
+
+.alert {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: .6rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: .6px;
+}
+
+.alert p {
+    margin-bottom: 0;
+}
+
+.alert .alert__close {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.alert-success {
+    background-color: var(--bg-success-color);
+}
+
+.alert-danger {
+    background-color: var(--bg-danger-color);
+}
+
+.alert-warning {
+    background-color: var(--bg-warning-color);
+}
+
+.alert-info{
+    background-color: var(--bg-second-color);
 }
 
 .button {
@@ -106,20 +149,28 @@ h1, h2, h3, h4 {
     background-color: #02559e;
 }
 
-.button-red {
+.button-danger {
     background-color: var(--bg-danger-color);
 }
 
-.button-red:hover {
+.button-danger:hover {
     background-color: var(--bg-danger-darker-color);    
 }
 
-.button-green {
+.button-success {
     background-color: var(--bg-success-color);
 }
 
-.button-green:hover {
+.button-success:hover {
     background-color: var(--bg-success-darker-color);    
+}
+
+.button-warning {
+    background-color: var(--bg-warning-color);
+}
+
+.button-warning:hover {
+    background-color: var(--bg-warning-darker-color);    
 }
 
 .button-dark {

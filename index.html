@@ -254,12 +254,31 @@
                     <h2>This is a title</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, veritatis! Incidunt ab hic sequi voluptate, voluptates enim aspernatur dolorem magnam. Odit fugit provident nihil dicta distinctio minima doloremque, itaque repellendus?</p>
                     <a href="#" class="link">This is a link</a>
-                    <button class="button">Button</button>
-                    <button class="button button-red">Button Red</button>
-                    <button class="button button-green">Button Red</button>
-                    <button class="button button-white">Report</button>
-                    <button class="button button-dark">Button Dark</button>
-                    <button class="button button-dark" @click="modalVisible = !modalVisible">Modal</button>
+                    <div class="mb-1">
+                        <button class="button">Button</button>
+                        <button class="button button-danger">Button Red</button>
+                        <button class="button button-success">Button Red</button>
+                        <button class="button button-warning">Button Red</button>
+                        <button class="button button-white">Report</button>
+                        <button class="button button-dark">Button Dark</button>
+                        <button class="button button-dark" @click="modalVisible = !modalVisible">Modal</button>
+                    </div>
+                    <div class="alert alert-success" x-data="{close: false,}" x-show="!close">
+                        <p>We have success, our escape is assured!</p>
+                        <i class='bx bx-x alert__close' @click="close = true"></i>
+                    </div>
+                    <div class="alert alert-danger" x-data="{close: false,}" x-show="!close">
+                        <p>This is an alert, danger, danger, something is happening, captain, run!</p>
+                        <i class='bx bx-x alert__close' @click="close = true"></i>
+                    </div>
+                    <div class="alert alert-warning" x-data="{close: false,}" x-show="!close">
+                        <p>Warning, warning, captain, we are going down!</p>
+                        <i class='bx bx-x alert__close' @click="close = true"></i>
+                    </div>
+                    <div class="alert alert-info" x-data="{close: false,}" x-show="!close">
+                        <p>Info related with the enemy ship, they are moving around us.</p>
+                        <i class='bx bx-x alert__close' @click="close = true"></i>
+                    </div>
                     <form action="">
                         <div class="form__group">
                             <label for="username" class="form__label">Username</label>
