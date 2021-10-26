@@ -40,7 +40,7 @@ body {
     position: relative;
 }
 
-body.dark-mode {
+body.light-mode {
     color: #444;
     background-color: #fff;
     min-height: 100vh;
@@ -48,92 +48,92 @@ body.dark-mode {
     position: relative;
 }
 
-body.dark-mode .sidebar {
+body.light-mode .sidebar {
     background-color: #fff;
     color: #444;
     border-color: #eee;
 }
 
 
-body.dark-mode .content {
+body.light-mode .content {
     background-color: #E5E7EB;
 }
 
-body.dark-mode .content__header {
+body.light-mode .content__header {
     background-color: #fff;
 }
 
-body.dark-mode .siderbar__header {
+body.light-mode .siderbar__header {
     border-color: #eee;
 }
 
-body.dark-mode .sidebar .logo__title,
-body.dark-mode .sidebar .logo i {
+body.light-mode .sidebar .logo__title,
+body.light-mode .sidebar .logo i {
     color: #444;
 }
 
-body.dark-mode .menu__link, 
-body.dark-mode .link__icon {
+body.light-mode .menu__link, 
+body.light-mode .link__icon {
     color: #444;
 }
 
-body.dark-mode .show-dropdown a {
+body.light-mode .show-dropdown a {
     color: #fff;
 }
 
-body.dark-mode a.custom-dark {
+body.light-mode a.custom-dark {
     color: #444;
 }
 
-body.dark-mode .menu__link-active,
-body.dark-mode .menu__link-active .link__icon,
-body.dark-mode .menu__link:hover,
-body.dark-mode .menu__link:hover i,
-body.dark-mode .alert {
+body.light-mode .menu__link-active,
+body.light-mode .menu__link-active .link__icon,
+body.light-mode .menu__link:hover,
+body.light-mode .menu__link:hover i,
+body.light-mode .alert {
     color: #fff;
 }
 
-body.dark-mode .box,
-body.dark-mode input,
-body.dark-mode .info__box {
+body.light-mode .box,
+body.light-mode input,
+body.light-mode .info__box {
     border-color: #D1D5DB;
     color: #444;
     background-color: #fff;
 }
 
-body.dark-mode label {
+body.light-mode label {
     color: #444;
 }
 
-body.dark-mode .content__header {
+body.light-mode .content__header {
     border-color: #eee;
 }
 
-body.dark-mode ::placeholder {
+body.light-mode ::placeholder {
     color: #444;
 }
 
-body.dark-mode .dropdown-content i {
+body.light-mode .dropdown-content i {
     color: #fff;
 }
 
-body.dark-mode .tab {
+body.light-mode .tab {
     border-color: #D1D5DB;
     border-width: 2px;
 }
 
-body.dark-mode .tab-active,
-body.dark-mode .tab:hover {
+body.light-mode .tab-active,
+body.light-mode .tab:hover {
     border-color: var(--bg-second-color);
 }
 
-body.dark-mode .modal__content {
+body.light-mode .modal__content {
     background-color: #fff;
     color: #444;
     border-color: #D1D5DB;
 }
 
-body.dark-mode .modal__close i {
+body.light-mode .modal__close i {
     color: #444;
 }
 

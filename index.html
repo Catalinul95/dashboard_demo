@@ -13,12 +13,12 @@
         sidebarVisible: false, 
         sidebarToggle: false, 
         modalVisible: false, 
-        darkMode: localStorage.getItem('darkMode') ? 1 : 0,
+        darkMode: localStorage.getItem('darkMode') ?? 1,
     }" 
 
-    x-init="$watch('darkMode', (val) => localStorage.setItem('darkMode', val)); darkMode = localStorage.getItem('darkMode') ? 1 : 0"
+    x-init="$watch('darkMode', (val) => localStorage.setItem('darkMode', val)); darkMode = localStorage.getItem('darkMode') ?? 1"
 
-    x-bind:class="parseInt(darkMode) === 1 ? 'dark-mode' : ''"
+    x-bind:class="parseInt(darkMode) == 1 ? '' : 'light-mode'"
 >
     <div class="container">
         <div class="sidebar" x-bind:class="[(sidebarVisible) ? 'show-sidebar' : '', (sidebarToggle) ? 'sidebar-toggled' : '']">
@@ -138,8 +138,8 @@
                         </div>
                     </div>
                     <div>
-                        <i class='bx bxs-sun' x-show="!darkMode" @click="darkMode = 1"></i>
-                        <i class='bx bxs-moon' x-show="darkMode"  @click="darkMode = 0"></i>
+                        <i class='bx bxs-sun' x-show="parseInt(darkMode) ==  2" @click="darkMode = 1"></i>
+                        <i class='bx bxs-moon' x-show="parseInt(darkMode) === 1"  @click="darkMode = 2;"></i>
                     </div>
                 </div>
             </div>
